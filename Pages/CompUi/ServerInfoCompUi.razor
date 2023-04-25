@@ -1,0 +1,38 @@
+﻿@inject IHttpContextAccessor httpContextAccessor
+@{
+    var remoteIpAddress = httpContextAccessor.HttpContext.Connection?.RemoteIpAddress;
+    var localIpAddress = httpContextAccessor.HttpContext.Connection?.LocalIpAddress;
+
+    var ipv4Address = "???";
+    var serverIP = "???";
+    if (remoteIpAddress != null)
+    {
+        if (remoteIpAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)
+        {
+            // Convert IPv6 to IPv4
+            remoteIpAddress = System.Net.Dns.GetHostEntry(remoteIpAddress).AddressList
+                .FirstOrDefault(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork);
+        }
+        if (remoteIpAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+        {
+            // IPv4 address
+            ipv4Address = remoteIpAddress.ToString();
+        }
+    }
+    if (localIpAddress != null)
+    {
+        if (localIpAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)
+        {
+            // Convert IPv6 to IPv4
+            localIpAddress = System.Net.Dns.GetHostEntry(remoteIpAddress).AddressList
+                .FirstOrDefault(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork);
+        }
+        if (localIpAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+        {
+            // IPv4 address
+            serverIP = localIpAddress.ToString();
+        }
+    }
+}
+<h1>Server IP: @serverIP</h1>
+<h1>Client IP: @ipv4Address</h1>

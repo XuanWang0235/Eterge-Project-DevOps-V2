@@ -1,0 +1,18 @@
+@page "/server"
+@using Microsoft.AspNetCore.Http
+@using System.IO
+@inject ILogger<Intro> Logger
+<PageTitle>DevOps開發運營</PageTitle>
+<DevOpsProject.Pages.CompUi.ServerInfoCompUi />
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        string timeStamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
+        Logger.LogInformation("User visited the intro page at {Timestamp}", timeStamp);
+
+        // Save the log entry to a file with the yyyyMMdd naming convention
+        string logEntry = $"User visited the intro page at {timeStamp}";
+        string logFileName = $"intro_page_log_{DateTime.UtcNow:yyyyMMdd}.txt";
+        await File.AppendAllTextAsync(logFileName, logEntry + Environment.NewLine);
+    }
+}

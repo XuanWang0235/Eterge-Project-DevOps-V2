@@ -1,0 +1,11 @@
+﻿@page "/intro"
+@inject ILogger<Intro> Logger
+<h3>Intro</h3>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        Logger.LogInformation("User visited the intro page at {Timestamp}", DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss"));
+        await Task.CompletedTask;
+    }
+}

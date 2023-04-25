@@ -1,9 +1,423 @@
-﻿@page "/xxx"
+@page "/"
+@using Microsoft.AspNetCore.Http
+@inject ILogger<Intro> Logger
+@inject IHttpContextAccessor httpContextAccessor
+<PageTitle>DevOps開發運營</PageTitle>
+@*<DevOpsProject.Pages.CompUi.ServerInfoCompUi />*@
+@*版本:@linkTimeLocal.ToString("yyyy.MM.dd.HHmm")*@
+@if (true)
+{
+    <h1><a target="_blank" href="https://app.asana.com/0/1204367921586778/board">DevOps</a></h1>
+    <table class="gridtable">
+        <tr>
+            <td colspan="2" style="border-width:0"></td>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+            <th>F</th>
+            <th>G</th>
+            <th>H</th>
+            <th>I</th>
+            <th>J</th>
+        </tr>
+        <tr>
+            <td colspan="2" style="border-width:0"></td>
+            <th><a target="_blank" href="https://app.asana.com/0/1204367921586778/board">DevOps</a></th>
+            <th><a target="_blank" href="https://app.asana.com/0/1204278431350387/board">MES查詢</a></th>
+            <th><a target="_blank" href="https://app.asana.com/0/1204278431350387/board">MTF</a></th>
+            <th><a target="_blank" href="https://app.asana.com/0/1204419680587709/1204408543147885">組裝機IoT</a></th>
+            <th><a target="_blank" href="https://app.asana.com/0/1204278431350395/board">報價</a></th>
+            <th><a target="_blank" href="https://app.asana.com/0/1204267517958868/board">客訴</a></th>
+            <th><a target="_blank" href="https://app.asana.com/0/1202766948654586/board">治工具</a></th>
+            <th>ERP</th>
+            <th>BPM</th>
+            <th>JMO MES</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <th>Plan計劃</th>
+            <td valign="top" class="color2">
+                <ul>
+                    <li>局網:192.168.150.250</li>
+                </ul>
+            </td>
+            <td valign="top" class="color1">
+                <ul>
+                    <li>局網:192.168.150<a title="檢查IIS是否正常" target="_blank" href="http://192.168.150.206">.206</a></li>
+                </ul>
+            </td>
+            <td valign="top" class="color1">
+                <ul>
+                    <li>局網:192.168.150<a title="檢查IIS是否正常" target="_blank" href="http://192.168.150.208">.208</a></li>
+                    @*<li>公網:211.20.169.192</li>*@
+                    <li>域名:mtf.eterge.com</li>
+                    <li>SSL:04/18 部署完成</li>
+                </ul>
+            </td>
+            <td valign="top" class="color1"></td>
+            <td valign="top" class="color1">
+                <ul>
+                    <li>局網:192.168.150<a title="檢查IIS是否正常" target="_blank" href="http://192.168.150.242">.242</a></li>
+                    @*<li>公網:(待設定)</li>*@
+                    <li>域名:cloud.eterge.com (待設定)</li>
+                    <li>SSL: (待設定)</li>
+                </ul>
+            </td>
+            <td valign="top" class="color1">
+                <ul>
+                    <li>局網:192.168.150<a title="檢查IIS是否正常" target="_blank" href="http://192.168.150.207">.207</a></li>
+                    @*<li>公網:(待設定)</li>*@
+                    <li>域名:app.eterge.com (待設定)</li>
+                    <li>SSL: (待設定)</li>
+                </ul>
+            </td>
+            <td valign="top" class="color1"></td>
+            <td valign="top" class="color3"></td>
+            <td valign="top" class="color3"></td>
+            <td valign="top" class="color3"></td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <th>Code代碼</th>
+            <td valign="top" class="color2">
+                <ul>
+                    <li>代碼:DevOps:80</li>
+                </ul>
+            </td>
+            <td valign="top" class="color2">
+                <ul>
+                    <li>代碼:MES-Query-Snapshot :8813</li>
+                    <li>代碼:MES-Query-Online :8815</li>
+                    <li>代碼:MES-Snapshot-Console 做快照</li>
 
-<PageTitle>Index</PageTitle>
+                    <li>DB:(.241)HLMES</li>
 
-<h1>Hello, world!</h1>
+                </ul>
+            </td>
+            <td valign="top" class="color2">
+                <ul>
+                    <li>代碼:MTF</li>
+                    <li>DB:(.241)HLMES </li>
 
-Welcome to your new app.
+                </ul>
+            </td>
+            <td class="color2"></td>
+            <td valign="top" class="color2">
+                <ul>
+                    <li>代碼:Pricing</li>
+                    <li>DB:(.242)PricingV2</li>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+                </ul>
+
+            </td>
+            <td valign="top" class="color2">
+                <ul>
+                    <li>
+                        代碼:Customer-Complaint
+                    </li>
+                    <li>DB:(.241)PROJECT</li>
+
+                </ul>
+
+            </td>
+            <td class="color2"></td>
+            <td class="color3"></td>
+            <td class="color3"></td>
+            <td class="color3"></td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <th>Build建立</th>
+            <td valign="top" class="color2">
+            </td>
+            <td class="color2"></td>
+            <td class="color2"></td>
+            <td class="color2"></td>
+            <td class="color2"></td>
+            <td class="color2"></td>
+            <td class="color2"></td>
+            <td class="color3"></td>
+            <td class="color3"></td>
+            <td class="color3"></td>
+        </tr>
+        <tr>
+            <th>4</th>
+            <th>Test測試</th>
+            <td valign="top" class="color2">
+                <ul>
+                </ul>
+            </td>
+            <td valign="top" class="color2">
+
+                <ul>
+
+                    <li>
+                        局網訪問 <a target="_blank" href="http://192.168.150.250:8813">MES查詢(快照版)</a>
+                    </li>
+                    <li>
+                        局網訪問 <a target="_blank" href="http://192.168.150.250:8815">MES查詢(線上版)</a>
+                    </li>
+
+                    @*   <li>
+                局網訪問 <a target="_blank" href="http://192.168.150.206:8835">客訴</a>(冗餘)
+                </li>*@
+
+                </ul>
+
+            </td>
+            <td valign="top" class="color2"></td>
+            <td valign="top" class="color2"></td>
+            <td valign="top" class="color2">
+                <ul>
+                    <li> 代碼:Pricing-V3</li>
+                    <li> DB:(.242)PricingV3</li>
+                    <li> 開發測試供SA確認<a href="http://192.168.150.250:8743/">.250:8743</a></li>
+                </ul>
+
+
+            </td>
+            <td valign="top" class="color2"></td>
+            <td valign="top" class="color2"></td>
+            <td valign="top" class="color3"></td>
+            <td valign="top" class="color3"></td>
+            <td valign="top" class="color3"></td>
+        </tr>
+        <tr>
+            <th>5</th>
+            <th>Release發布</th>
+            <td valign="top" class="color2">
+                <ul>
+                </ul>
+            </td>
+            <td valign="top" class="color2"></td>
+            <td valign="top" class="color2"></td>
+            <td valign="top" class="color2"></td>
+            <td valign="top" class="color2">
+                <ul>
+                    @*<li> 局網訪問 <a target="_blank" href="http://192.168.150.242:8741">報價</a></li>*@
+                    <li>發佈檔案放於 <a target="_blank" href="https://app.asana.com/0/1204367921586778/1204446119357210">Asana</a></li>
+                    <li>最新build:<span style="color:darkblue">2023.4.24.1640</span></li>
+                </ul>
+            </td>
+            <td valign="top" class="color2"></td>
+            <td valign="top" class="color2"></td>
+            <td valign="top" class="color3"></td>
+            <td valign="top" class="color3"></td>
+            <td valign="top" class="color3"></td>
+        </tr>
+        <tr>
+            <th>6</th>
+            <th><a target="_blank" href="https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/?view=aspnetcore-6.0">Deploy部署</a></th>
+            <td valign="top" class="color2">
+                <ul>
+                    <li>局網訪問 <a target="_blank" href="http://192.168.150.250">DevOps</a></li>
+                </ul>
+            </td>
+            <td valign="top" class="color1">
+                <ul>
+                    <li>
+                     <b>04/24 虛擬機帳密已交付給 仲哲</b>
+                    </li>
+                    <li>
+                        局網訪問 <a target="_blank" href="http://192.168.150.206:8813">MES查詢(快照版)</a>
+                    </li>
+                    <li>
+                        局網訪問 <a target="_blank" href="http://192.168.150.206:8815">MES查詢(線上版)</a>
+                    </li>
+
+                    @*   <li>
+                局網訪問 <a target="_blank" href="http://192.168.150.206:8835">客訴</a>(冗餘)
+                </li>*@
+
+                </ul>
+            </td>
+            <td valign="top" class="color1">
+                <ul>
+                    @*<li>  <a target="_blank" href="http://192.168.150.208:8855/">局網訪問MTF</a>(維護權限)</li>*@
+                    <li>公網訪問 <a target="_blank" href="https://mtf.eterge.com">MTF</a></li>
+
+                </ul>
+
+
+            </td>
+            <td valign="top" class="color1"></td>
+            <td valign="top" class="color1">
+                <ul>
+                    <li>
+                        <b>04/25 部署步驟已技轉給 仲哲</b>
+                    </li>
+                    <li> 局網訪問 <a target="_blank" href="http://192.168.150.242:8741">報價</a></li>
+                    @*<li> 交接給SA部署最新版本<a target="_blank" href="https://app.asana.com/0/1204367921586778/1204446119357210">Asana</a></li>*@
+             
+                </ul>
+
+
+            </td>
+            <td valign="top" class="color1">
+                <ul>
+
+                    <li>
+                        局網訪問 <a target="_blank" href="http://192.168.150.207:8835/">客訴</a>
+                    </li>
+                    @*  <li>
+                局網訪問 <a target="_blank" href="http://192.168.150.207:8815/">MES查詢</a>(冗餘)
+                </li>*@
+                </ul>
+            </td>
+            <td valign="top" class="color1"></td>
+
+            <td valign="top" class="color3"></td>
+            <td valign="top" class="color3"><a target="_blank" href="http://192.168.150.235:8088">訪問</a></td>
+            <td valign="top" class="color3"><a target="_blank" href="http://192.168.150.241/MES">訪問</a></td>
+        </tr>
+        <tr>
+            <th>7</th>
+            <th>Operate運營</th>
+            <td valign="top" class="color2">
+                <ul>
+                </ul>
+            </td>
+            <td valign="top" class="color1">
+                <ul>
+                    <li>[MES查詢]每小時自動快照</li>
+                    <li>每月新增8支查詢頁面</li>
+                    <li>每月導入月計劃</li>
+                </ul>
+
+
+            </td>
+            <td class="color1"></td>
+            <td class="color1"></td>
+            <td valign="top" class="color1">
+            </td>
+            <td valign="top" class="color1">
+                <ul>
+                    <li>[MES查詢]每小時自動快照(冗餘)</li>
+
+                </ul>
+
+            </td>
+            <td class="color1"></td>
+            <td class="color3"></td>
+            <td class="color3"></td>
+            <td class="color3"></td>
+        </tr>
+        <tr>
+            <th>8</th>
+            <th>Monitor監控</th>
+            <td valign="top" class="color2">
+                <ul>
+                </ul>
+            </td>
+            <td valign="top" class="color1">
+                <ul>
+                    <li><span style="color:red">研判Server功能受到干擾</span></li>
+                    <li><span style="color:red">測試機為對照組</span></li>
+                    @*<a target="_blank" href="http://192.168.150.250:8765/">對照組</a>(預期正常)*@
+                </ul>
+
+
+            </td>
+            <td class="color1"></td>
+            <td class="color1"></td>
+            <td class="color1"></td>
+            <td class="color1">
+                @*   <ul>
+            <li><span style="color:red">研判Server功能受到干擾</span></li>
+            <a target="_blank" href="http://192.168.150.250:8765/">對照組</a>(預期正常)
+            </ul>*@
+
+            </td>
+
+            <td class="color1"></td>
+            <td class="color3"></td>
+            <td class="color3"></td>
+            <td class="color3"></td>
+        </tr>
+    </table>
+    <br />
+    <h4>備註:</h4>
+    <ol>
+
+        <li>[E6]報價部署已於 04/25 11:30 由 禹軒 交付給 仲哲 管理。</li>
+        <li>Eterge-Project-MES-Snapshot-Console 是 [MES查詢]每小時自動快照 的代碼。</li>
+        <li>
+            「<b>冗餘</b>設置」的意思是指系統或網路配置中包含重複的組件或路徑，旨在提供備份或故障轉移功能，以應對組件或路徑失敗的情況。
+
+        </li>
+        <li><b>代碼</b>前綴為 Eterge-Project-。</li>
+        <li>
+            <a href="http://192.168.150.250">紘立入口網站</a> :只限局網
+        </li>
+        <li>
+            顏色應對人員負責區塊
+            <ul>
+                <li><span style="background-color:#F5F5F5">Item 1,6,7,8 Eterge MES查詢 客訴 報價 MTF for 鍾仲哲 3658 林雅琪 3662</span></li>
+                <li><span style="background-color:#ffffed">Item 2,3,4,5 Eterge MES查詢 客訴 報價 MTF for 王禹軒 3661 and Mark</span></li>
+                <li><span style="background-color:#d3d3d3">整個 <b>ERP</b>, <b>BPM</b>, and <b>JMO MES</b>, 表示 MIS 為主的責任區</span></li>
+            </ul>
+        </li>
+        <li>除初期設置外, 後續 WebApp 更新, 由 仲哲 和 雅琪 取得發佈檔案後負責各正式機。</li>
+        <li>
+            <span style="background-color:lightpink">
+                .206 和 .207 都部署 MES查詢 及 客訴, 做為雙APP機, 後續對照組有發現明顯延遲時,
+                請 仲哲 雅琪 優先和 宏宇 駿銘 確認虛擬機的性能, 同時先檢查必要的 Windows Update。
+            </span>
+        </li>
+        <li>  <a target="_blank" href="http://192.168.150.250:8741/">權限設定專用(待調整)</a></li>
+        <li>DevOps示意圖</li>
+
+        <img src="/img/2023-04-11-000.png" alt="/img/2023-04-11-000.png" width="500" style="vertical-align:bottom" />
+    </ol>
+}
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        var remoteIpAddress = httpContextAccessor.HttpContext.Connection?.RemoteIpAddress;
+        var localIpAddress = httpContextAccessor.HttpContext.Connection?.LocalIpAddress;
+
+        var ipv4Address = "???";
+        var serverIP = "???";
+        if (remoteIpAddress != null)
+        {
+            if (remoteIpAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)
+            {
+                // Convert IPv6 to IPv4
+                remoteIpAddress = System.Net.Dns.GetHostEntry(remoteIpAddress).AddressList
+                    .FirstOrDefault(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork);
+            }
+            if (remoteIpAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            {
+                // IPv4 address
+                ipv4Address = remoteIpAddress.ToString();
+            }
+        }
+        if (localIpAddress != null)
+        {
+            if (localIpAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)
+            {
+                // Convert IPv6 to IPv4
+                localIpAddress = System.Net.Dns.GetHostEntry(remoteIpAddress).AddressList
+                    .FirstOrDefault(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork);
+            }
+            if (localIpAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            {
+                // IPv4 address
+                serverIP = localIpAddress.ToString();
+            }
+        }
+
+
+
+
+        string timeStamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
+        //Logger.LogInformation("User visited the intro page at {Timestamp}", timeStamp);
+
+        // Save the log entry to a file with the yyyyMMdd naming convention
+        string logEntry = $"{ipv4Address} visited {serverIP} at {timeStamp}";
+        string logFileName = $"devops_log_{DateTime.UtcNow:yyyyMMdd}.txt";
+        await File.AppendAllTextAsync(logFileName, logEntry + Environment.NewLine);
+    }
+}
