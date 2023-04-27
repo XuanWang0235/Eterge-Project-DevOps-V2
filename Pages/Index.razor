@@ -136,9 +136,14 @@
         <tr>
             <th>3</th>
             <th>Build建立</th>
-            <td valign="top" class="color2">
+            <td valign="top" class="color2"></td>
+            <td class="color2">
+                <ul>
+                    <li>每月新增8支查詢頁面</li>
+                    <li>每月顯示月計劃</li>
+                </ul>
+
             </td>
-            <td class="color2"></td>
             <td class="color2"></td>
             <td class="color2"></td>
             <td class="color2"></td>
@@ -156,7 +161,15 @@
                 </ul>
             </td>
             <td valign="top" class="color2"></td>
-            <td valign="top" class="color2"></td>
+            <td valign="top" class="color2">
+                <ul>
+                    <li>
+                        MES-Query-Snapshot針對 REJ_V4, ,
+                        先使用測試用DB:(.206)HLMES
+                    </li>
+                <li><a target="_blank" href="http://192.168.150.250:8816"><span style="color:darkblue">2023.4.27.0919</span></a>線上版</li>
+                </ul>
+                </td>
             <td valign="top" class="color2"></td>
             <td valign="top" class="color2"></td>
             <td valign="top" class="color2"></td>
@@ -167,7 +180,7 @@
         </tr>
         <tr>
             <th>5</th>
-            <th>Release發布(Version)</th>
+            <th>Release發布<br>(Version)</th>
             <td valign="top" class="color2">
                 <ul>
                 </ul>
@@ -278,8 +291,7 @@
             <td valign="top" class="color1">
                 <ul>
                     <li>[MES查詢]每小時自動快照</li>
-                    <li>每月新增8支查詢頁面</li>
-                    <li>每月導入月計劃</li>
+                    <li>每更新一版都會將最新版本發佈到.250測試區，再由仲哲發佈到.206正式區</li>
                 </ul>
 
 
@@ -301,15 +313,7 @@
                 <ul>
                 </ul>
             </td>
-            <td valign="top" class="color1">
-                <ul>
-                    <li><span style="color:red">研判Server功能受到干擾</span></li>
-                    <li><span style="color:red">測試機為對照組</span></li>
-                    @*<a target="_blank" href="http://192.168.150.250:8765/">對照組</a>(預期正常)*@
-                </ul>
-
-
-            </td>
+            <td valign="top" class="color1"></td>
             <td class="color1"></td>
             <td class="color1"></td>
             <td class="color1"></td>
@@ -333,8 +337,8 @@
         <li>
             Customer-Complaint-Copy-Files :8839 由於局網域的權限限制, 無法在目前的IIS部署, 需用命令啟動, 做成<b>run8839.bat</b>檔案放置於虛擬機桌面方便啟動
             <pre><code>
-        cd C:\IIS\Eterge-Project-Customer-Complaint-Copy-Files-Publish
-        dotnet WebToCmd.dll --urls http://192.168.150.207:8839</code></pre>
+            cd C:\IIS\Eterge-Project-Customer-Complaint-Copy-Files-Publish
+            dotnet WebToCmd.dll --urls http://192.168.150.207:8839</code></pre>
             後續如果 NAS 有改路徑, 代碼:Customer-Complaint-Copy-Files :8839 和所含的 核心EXE檔案
             兩者都要跟著調整, 重新 Build, Publish and Release
         </li>
@@ -374,7 +378,7 @@
             </ul>
         </li>
         <li>除初期設置外, 後續 WebApp 更新, 由 仲哲 和 雅琪 取得發佈檔案後負責各正式機。</li>
-       <li>  <a target="_blank" href="http://192.168.150.250:8741/">權限設定專用(待調整)</a></li>
+        <li>  <a target="_blank" href="http://192.168.150.250:8741/">權限設定專用(待調整)</a></li>
         <li>DevOps示意圖</li>
 
         <img src="/img/2023-04-11-000.png" alt="/img/2023-04-11-000.png" width="500" style="vertical-align:bottom" />
