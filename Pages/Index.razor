@@ -164,7 +164,10 @@
                 <ul>
                     <li>
                         MES-Query-Snapshot針對 REJ_V4
-                        <br>先使用測試用DB:(.206)HLMES
+                        <ul>
+                            <li>先使用測試用DB:(.206)HLMES</li>
+                            <li><a target="_blank" href="http://192.168.150.250:8999">Xuan測試用</a></li>
+                        </ul>
                     </li>
                     <li><a target="_blank" href="http://192.168.150.250:8816"><span style="color:darkblue">2023.4.27.0919</span></a>線上版</li>
                 </ul>
@@ -343,8 +346,8 @@
         <li>
             Customer-Complaint-Copy-Files :8839 由於局網域的權限限制, 無法在目前的IIS部署, 需用命令啟動, 做成<b>run8839.bat</b>檔案放置於虛擬機桌面方便啟動
             <pre><code>
-            cd C:\IIS\Eterge-Project-Customer-Complaint-Copy-Files-Publish
-            dotnet WebToCmd.dll --urls http://192.168.150.207:8839</code></pre>
+                cd C:\IIS\Eterge-Project-Customer-Complaint-Copy-Files-Publish
+                dotnet WebToCmd.dll --urls http://192.168.150.207:8839</code></pre>
             後續如果 NAS 有改路徑, 代碼:Customer-Complaint-Copy-Files :8839 和所含的 核心EXE檔案
             兩者都要跟著調整, 重新 Build, Publish and Release
         </li>
