@@ -118,16 +118,16 @@
             <td valign="top" class="color2">
                 <ul>
                     <li>
-                        Customer-Complaint 
+                        Customer-Complaint
                     </li>
                     <li>
                         Customer-Complaint-Attachment
                     </li>
                     <li>
-                        Customer-Complaint-Copy-Files 
+                        Customer-Complaint-Copy-Files
 
                     </li>
-                   
+
                     <li>DB:(.241)PROJECT</li>
                 </ul>
             </td>
@@ -178,12 +178,14 @@
                     <li><a target="_blank" href="http://192.168.150.208:8852"><span style="color:darkblue">2023.5.22.1622</span></a></li>
                 </ul>
             </td>
-            <td valign="top" class="color2"></td>
+            <td valign="top" class="color2">
+                <ul><li><a target="_blank" href="http://192.168.150.250:8852/"><span style="color:darkblue">2023.5.23.1233</span></a></li></ul>
+            </td>
             <td valign="top" class="color2">
                 <ul><li><a target="_blank" href="http://192.168.150.250:8744/"><span style="color:darkblue">2023.5.8.1653</span></a></li></ul>
             </td>
             <td valign="top" class="color2">
-                 <ul>
+                <ul>
                     <li><a target="_blank" href="http://192.168.150.250:8836/"><span style="color:darkblue">2023.4.27.1624</span></a>客訴</li>
                     <li>&nbsp; &nbsp;&nbsp;<a target="_blank" href="http://192.168.150.250:8837/"><span style="color:darkblue">2023.4.26.1019</span></a>客訴附件</li>
                     <li>&nbsp; &nbsp;&nbsp;<a target="_blank" href="http://192.168.150.250:8838/"><span style="color:darkblue">2023.4.26.1522</span></a>複製NAS檔案</li>
@@ -212,7 +214,7 @@
                     <li><a target="_blank" href="http://192.168.150.208:8852"><span style="color:darkblue">2023.5.22.1622</span></a></li>
                 </ul>
             </td>
-            <td valign="top" class="color2"></td>
+            <td valign="top" class="color2"><ul><li><a target="_blank" href="http://192.168.150.250:8855/"><span style="color:darkblue">2023.5.23.1234</span></a></li></ul></td>
             <td valign="top" class="color2">
                 <ul>
                     <li><a target="_blank" href="http://192.168.150.250:8743/"><span style="color:darkblue">2023.5.8.1653</span></a></li>
@@ -284,7 +286,7 @@
                     <li>
                         局網訪問 <a target="_blank" href="http://192.168.150.207:8835/">客訴</a>:8835，包括
                     </li>
-                    
+
                     <li>
                         &nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://192.168.150.207:8833/">維護附件名稱</a>:8833
                     </li>
@@ -309,7 +311,7 @@
             <td valign="top" class="color1">
                 <ul>
                     <li>[MES查詢]每小時自動快照</li>
-                    
+
                 </ul>
 
 
@@ -366,8 +368,8 @@
         <li>
             Customer-Complaint-Copy-Files :8839 由於局網域的權限限制, 無法在目前的IIS部署, 需用命令啟動, 做成<b>run8839.bat</b>檔案放置於虛擬機桌面方便啟動
             <pre><code>
-                cd C:\IIS\Eterge-Project-Customer-Complaint-Copy-Files-Publish
-                dotnet WebToCmd.dll --urls http://192.168.150.207:8839</code></pre>
+                    cd C:\IIS\Eterge-Project-Customer-Complaint-Copy-Files-Publish
+                    dotnet WebToCmd.dll --urls http://192.168.150.207:8839</code></pre>
             後續如果 NAS 有改路徑, 代碼:Customer-Complaint-Copy-Files :8839 和所含的 核心EXE檔案
             兩者都要跟著調整, 重新 Build, Publish and Release
         </li>
