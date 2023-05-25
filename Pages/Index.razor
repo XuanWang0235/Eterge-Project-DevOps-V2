@@ -379,6 +379,13 @@
                     dotnet WebToCmd.dll --urls http://192.168.150.207:8839</code></pre>
             後續如果 NAS 有改路徑, 代碼:Customer-Complaint-Copy-Files :8839 和所含的 核心EXE檔案
             兩者都要跟著調整, 重新 Build, Publish and Release
+            <b>
+            <ul>
+                <li>a.所在vm是否有權限訪問NAS 如果沒有 手工登入</li>
+                <li>b.appsettings 和 bat指定IP,Port,dir要正確</li>
+                <li>c.暫不用IIS 直接用cmd執行</li>
+            </ul>
+            </b>
         </li>
         <li>
             禹軒 Release發布檔案 以 zip 檔案放置在 仲哲(4/26)在 NAS 設定的目錄 \\192.168.150.252\Eterge共用資料夾\MES\Release發布
