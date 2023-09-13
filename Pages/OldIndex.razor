@@ -1,4 +1,4 @@
-@page "/"
+@page "/Old0913"
 @using Microsoft.AspNetCore.Http
 @inject ILogger<Intro> Logger
 @inject IHttpContextAccessor httpContextAccessor
@@ -7,10 +7,10 @@
 @*版本:@linkTimeLocal.ToString("yyyy.MM.dd.HHmm")*@
 @if (true)
 {
-    <h1>DevOps</h1>
+    <h1><a target="_blank" href="https://app.asana.com/0/1204367921586778/board">DevOps</a></h1>
     <table class="gridtable">
         <tr>
-            <td colspan="1" style="border-width:0"></td>
+            <td colspan="2" style="border-width:0"></td>
             <th>A</th>
             <th>B</th>
             <th>C</th>
@@ -23,19 +23,192 @@
             <th>J</th>
         </tr>
         <tr>
-            <td colspan="1" style="border-width:0"></td>
-            <th>DevOps</th>
-            <th>MES查詢</th>
-            <th>MTF</th>
-            <th>組裝機IoT</th>
-            <th>報價</th>
-            <th>客訴</th>
-            <th>治工具</th>
+            <td colspan="2" style="border-width:0"></td>
+            <th><a target="_blank" href="https://app.asana.com/0/1204367921586778/board">DevOps</a></th>
+            <th><a target="_blank" href="https://app.asana.com/0/1204278431350387/board">MES查詢</a></th>
+            <th><a target="_blank" href="https://app.asana.com/0/1204278431350387/board">MTF</a></th>
+            <th><a target="_blank" href="https://app.asana.com/0/1204654497171804/board">組裝機IoT</a></th>
+            <th><a target="_blank" href="https://app.asana.com/0/1204278431350395/board">報價</a></th>
+            <th><a target="_blank" href="https://app.asana.com/0/1204267517958868/board">客訴</a></th>
+            <th><a target="_blank" href="https://app.asana.com/0/1202766948654586/board">治工具</a></th>
             <th>ERP</th>
             <th>BPM</th>
             <th>JMO MES</th>
         </tr>
         <tr>
+            <th>1</th>
+            <th>Plan計劃</th>
+            <td valign="top" class="color2">
+                <ul>
+                    <li>192.168.150.250</li>
+                </ul>
+            </td>
+            <td valign="top" class="color1">
+                <ul>
+                    <li>192.168.150<a title="檢查IIS是否正常" target="_blank" href="http://192.168.150.206">.206</a></li>
+                </ul>
+            </td>
+            <td valign="top" class="color1">
+                <ul>
+                    <li>192.168.150<a title="檢查IIS是否正常" target="_blank" href="http://192.168.150.208">.208</a></li>
+                    @*<li>公網:211.20.169.192</li>*@
+                    <li>域名:mtf.eterge.com</li>
+                    <li>SSL:04/18 部署完成</li>
+                </ul>
+            </td>
+            <td valign="top" class="color1">
+                <ul>
+                    <li>192.168.150<a title="檢查IIS是否正常" target="_blank" href="http://192.168.150.209">.209</a></li>
+                </ul>
+            </td>
+            <td valign="top" class="color1">
+                <ul>
+                    <li>192.168.150<a title="檢查IIS是否正常" target="_blank" href="http://192.168.150.242">.242</a></li>
+                    @*<li>公網:(待設定)</li>*@
+                    <li>域名:cloud.eterge.com (待設定)</li>
+                    <li>SSL: (待設定)</li>
+                </ul>
+            </td>
+            <td valign="top" class="color1">
+                <ul>
+                    <li>192.168.150<a title="檢查IIS是否正常" target="_blank" href="http://192.168.150.207">.207</a></li>
+                    @*<li>公網:(待設定)</li>*@
+                    <li>域名:app.eterge.com (待設定)</li>
+                    <li>SSL: (待設定)</li>
+                </ul>
+            </td>
+            <td valign="top" class="color1"></td>
+            <td valign="top" class="color3"></td>
+            <td valign="top" class="color3"></td>
+            <td valign="top" class="color3"></td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <th>Code代碼</th>
+            <td valign="top" class="color2">
+                <ul>
+                    <li>DevOps:80</li>
+                </ul>
+            </td>
+            <td valign="top" class="color2">
+                <ul>
+                    <li>MES-Query-Snapshot</li>
+                    <li>MES-Query-Online</li>
+                    <li>MES-Snapshot-Console 做快照</li>
+                    <li>MES-Input-Plan-V3 月計畫維護</li>
+                    <li>DB:(.241)HLMES</li>
+
+                </ul>
+            </td>
+            <td valign="top" class="color2">
+                <ul>
+                    <li>MTF</li>
+                    <li>DB:(.241)HLMES </li>
+                </ul>
+            </td>
+            <td class="color2"></td>
+            <td valign="top" class="color2">
+                <ul>
+                    <li> Pricing-V3</li>
+                    <li> DB:(.242)PricingV3</li>
+                </ul>
+
+            </td>
+            <td valign="top" class="color2">
+                <ul>
+                    <li>
+                        Customer-Complaint
+                    </li>
+                    <li>
+                        Customer-Complaint-Attachment
+                    </li>
+                    <li>
+                        Customer-Complaint-Copy-Files
+
+                    </li>
+
+                    <li>DB:(.241)PROJECT</li>
+                </ul>
+            </td>
+            <td class="color2"></td>
+            <td class="color3"></td>
+            <td class="color3"></td>
+            <td class="color3"></td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <th>Build建立</th>
+            <td valign="top" class="color2"></td>
+            <td class="color2">
+                <ul>
+                    <li>每月新增8支查詢頁面</li>
+                    <li>每月顯示月計劃</li>
+                </ul>
+
+            </td>
+            <td class="color2"></td>
+            <td class="color2"></td>
+            <td class="color2"></td>
+            <td class="color2"></td>
+            <td class="color2"></td>
+            <td class="color3"></td>
+            <td class="color3"></td>
+            <td class="color3"></td>
+        </tr>
+        <tr>
+            <th>4</th>
+            <th>Test測試</th>
+            <td valign="top" class="color2"></td>
+            <td valign="top" class="color2"></td>
+            <td valign="top" class="color2"></td>
+            <td valign="top" class="color2"></td>
+            <td valign="top" class="color2"></td>
+            <td valign="top" class="color2"></td>
+            <td valign="top" class="color2"></td>
+            <td valign="top" class="color3"></td>
+            <td valign="top" class="color3"></td>
+            <td valign="top" class="color3"></td>
+        </tr>
+        <tr>
+            <th>5</th>
+            <th>Release發布<br>(Version)</th>
+            <td valign="top" class="color2"></td>
+            <td valign="top" class="color2">
+                <ul>
+
+                    <li><a target="_blank" href="http://192.168.150.250:8813"><span style="color:darkblue">2023.6.7.945</span></a>快照版</li>
+                    <li><a target="_blank" href="http://192.168.150.250:8815"><span style="color:darkblue">2023.5.31.1203</span></a>線上版</li>
+                    <li><a target="_blank" href="http://192.168.150.250:8566"><span style="color:darkblue">2023.4.26.1635</span></a>月計畫維護</li>
+                    <li><span style="color:darkblue">2023.4.26.1010</span>做快照 EXE</li>
+                </ul>
+            </td>
+            <td valign="top" class="color2">
+                <ul>
+                    <li><a target="_blank" href="http://192.168.150.208:8853"><span style="color:darkblue">2023.5.30.1120</span></a></li>
+                </ul>
+            </td>
+            <td valign="top" class="color2">
+                <ul><li><a target="_blank" href="http://192.168.150.250:8855/"><span style="color:darkblue">2023.5.25.1344</span></a></li></ul>
+            </td>
+            <td valign="top" class="color2">
+                <ul>
+                    <li><a target="_blank" href="http://192.168.150.250:8743/"><span style="color:darkblue">2023.5.8.1653</span></a></li>
+                </ul>
+            </td>
+            <td valign="top" class="color2">
+                <ul>
+                    <li><a target="_blank" href="http://192.168.150.250:8835/"><span style="color:darkblue">2023.4.27.1624</span></a>客訴</li>
+                    <li>&nbsp; &nbsp;&nbsp;<a target="_blank" href="http://192.168.150.250:8833/"><span style="color:darkblue">2023.4.26.1019</span></a>客訴附件</li>
+                    <li>&nbsp; &nbsp;&nbsp;<a target="_blank" href="http://192.168.150.250:8839/"><span style="color:darkblue">2023.4.26.1522</span></a>複製NAS檔案</li>
+                </ul>
+            </td>
+            <td valign="top" class="color2"></td>
+            <td valign="top" class="color3"></td>
+            <td valign="top" class="color3"></td>
+            <td valign="top" class="color3"></td>
+        </tr>
+         <tr>
+            <th>6</th>
             <th><a target="_blank" href="https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/?view=aspnetcore-6.0">Deploy部署</a></th>
             <td valign="top" class="color2">
                 <ul>
@@ -110,6 +283,54 @@
             <td valign="top" class="color3"><a target="_blank" href="http://192.168.150.241/MES">訪問</a>
                 <br><a target="_blank" href="http://192.168.20.36:16668">版本2測試</a>
             </td>
+        </tr>
+        <tr>
+            <th>7</th>
+            <th>Operate運營</th>
+            <td valign="top" class="color2">
+                <ul>
+                </ul>
+            </td>
+            <td valign="top" class="color1">
+                <ul>
+                    <li>[MES查詢]每小時自動快照</li>
+
+                </ul>
+
+
+            </td>
+            <td class="color1"></td>
+            <td class="color1"></td>
+            <td valign="top" class="color1"></td>
+            <td valign="top" class="color1"></td>
+            <td class="color1"></td>
+            <td class="color3"></td>
+            <td class="color3"></td>
+            <td class="color3"></td>
+        </tr>
+        <tr>
+            <th>8</th>
+            <th>Monitor監控</th>
+            <td valign="top" class="color2">
+                <ul>
+                </ul>
+            </td>
+            <td valign="top" class="color1"></td>
+            <td class="color1"></td>
+            <td class="color1"></td>
+            <td class="color1"></td>
+            <td class="color1">
+                @*   <ul>
+            <li><span style="color:red">研判Server功能受到干擾</span></li>
+            <a target="_blank" href="http://192.168.150.250:8765/">對照組</a>(預期正常)
+            </ul>*@
+
+            </td>
+
+            <td class="color1"></td>
+            <td class="color3"></td>
+            <td class="color3"></td>
+            <td class="color3"></td>
         </tr>
     </table>
     <br />
