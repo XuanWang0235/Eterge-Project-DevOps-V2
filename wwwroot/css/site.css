@@ -132,13 +132,3 @@ a, .btn-link {
         content: "An error has occurred."
     }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-li {
-    margin: 0;
-    padding: 0;
-}

@@ -2,54 +2,41 @@
 @using Microsoft.AspNetCore.Http
 @inject ILogger<Intro> Logger
 @inject IHttpContextAccessor httpContextAccessor
-<PageTitle>DevOps開發運營</PageTitle>
+<PageTitle>應用</PageTitle>
 @*<DevOpsProject.Pages.CompUi.ServerInfoCompUi />*@
 @*版本:@linkTimeLocal.ToString("yyyy.MM.dd.HHmm")*@
 @if (true)
 {
-    <h1>DevOps</h1>
+    <h1>應用</h1>
     <table class="gridtable">
         <tr>
-            <td colspan="1" style="border-width:0"></td>
             <th>A</th>
             <th>B</th>
             <th>C</th>
             <th>D</th>
             <th>E</th>
             <th>F</th>
-            <th>G</th>
-            <th>H</th>
-            <th>I</th>
-            <th>J</th>
+           
         </tr>
         <tr>
-            <td colspan="1" style="border-width:0"></td>
-            <th>DevOps</th>
+           <th>應用</th>
             <th>MES查詢</th>
             <th>MTF</th>
             <th>組裝機IoT</th>
             <th>報價</th>
             <th>客訴</th>
-            <th>治工具</th>
-            <th>ERP</th>
-            <th>BPM</th>
-            <th>JMO MES</th>
         </tr>
         <tr>
-            <th><a target="_blank" href="https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/?view=aspnetcore-6.0">Deploy部署</a></th>
             <td valign="top" class="color2">
                 <ul>
-                    <li>局網訪問 <a target="_blank" href="http://192.168.150.250">DevOps</a></li>
-                    <li>局網訪問 <a target="_blank" href="http://192.168.150.250:8080">全局權限</a></li>
-                    <li>禹軒筆記第一代<a target="_blank" href="http://192.168.150.250:8811/note/note0907">Note</a></li>
-                    <li>禹軒筆記第二代<a target="_blank" href="http://192.168.150.250:8877">Card</a></li>
+                    
+                    <li><a class="btn btn-primary" target="_blank" href="http://192.168.150.250:8881">September</a></li>
+                    <li>禹軒二代筆記<a target="_blank" href="http://192.168.150.250:8877">Card</a></li>
                 </ul>
             </td>
             <td valign="top" class="color1">
                 <ul>
-                    <li>
-                        <b>04/24 虛擬機帳密已交付給 仲哲</b>
-                    </li>
+                    
                     <li>
                         局網訪問 <a target="_blank" href="http://192.168.150.206:8813">MES查詢(快照版)</a>:8813
                     </li>
@@ -64,120 +51,49 @@
             </td>
             <td valign="top" class="color1">
                 <ul>
-                    <li><b>04/25 虛擬機帳密已交付給 仲哲</b></li>
+                    
                     <li>公網訪問 <a target="_blank" href="https://mtf.eterge.com:8855">MTF</a> 使用端口8855(05/30 14:30確認可使用)</li>
                     <li>MTF用戶註冊 <a target="_blank" href="http://192.168.150.208:8888">MTF-Registor</a></li>
                 </ul>
             </td>
             <td valign="top" class="color1">
                 <ul>
-                    <li><b>05/23 剛架設好IIS</b></li>
+                   
                     <li><a target="_blank" href="http://192.168.150.209:8855/"><span style="color:darkblue">2023.5.25.1344</span></a></li>
                 </ul>
             </td>
             <td valign="top" class="color1">
                 <ul>
-                    <li>
-                        <b>04/25 部署步驟已技轉給 仲哲</b>
-                    </li>
+                   
                     <li> 局網訪問 <a target="_blank" href="http://192.168.150.242:8741">報價</a>:8741</li>
-                    @*<li> 交接給SA部署最新版本<a target="_blank" href="https://app.asana.com/0/1204367921586778/1204446119357210">Asana</a></li>*@
-
+                    
                 </ul>
 
 
             </td>
             <td valign="top" class="color1">
                 <ul>
-                    <li><b>04/25 虛擬機帳密已交付給 仲哲</b></li>
                     <li>
-                        局網訪問 <a target="_blank" href="http://192.168.150.207:8835/">客訴</a>:8835，包括
+                        局網訪問 <a target="_blank" href="http://192.168.150.207:8835/">客訴</a>:8835
+                        <ul>
+                            <li>
+                                <a target="_blank" href="http://192.168.150.207:8833/">維護附件名稱</a>:8833
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://192.168.150.207:8839/">複製NAS檔案</a>:8839
+                            </li>
+                        </ul>
                     </li>
 
-                    <li>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://192.168.150.207:8833/">維護附件名稱</a>:8833
-                    </li>
-                    <li>
-                        &nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="http://192.168.150.207:8839/">複製NAS檔案</a>:8839
-                    </li>
-                    <li>客訴用戶註冊 <a target="_blank" href="http://192.168.150.207:8888">Project-Registor</a></li>
+                   
+                    
                 </ul>
             </td>
-            <td valign="top" class="color1"></td>
-
-            <td valign="top" class="color3"></td>
-            <td valign="top" class="color3"><a target="_blank" href="http://192.168.150.235:8088">訪問</a></td>
-            <td valign="top" class="color3"><a target="_blank" href="http://192.168.150.241/MES">訪問</a>
-                <br><a target="_blank" href="http://192.168.20.36:16668">版本2測試</a>
-            </td>
+           
         </tr>
     </table>
     <br />
-    <h4>備註:</h4>
-    <ol>
-        <li>
-            做快照的電腦, 目前會去打開頁面進行操作,同時留下做快照在頁面的記錄,
-            <br>使用者確認過沒問題, 就可以關掉上述的流覽器,
-            <br>打開過多TAB會耗用不必的系統資源像是CPU和RAM
-        </li>
-        <li>192.168起的網段即代表局網</li>
-        <li>
-            2023-04-27 啟動三個版本的 SOP
-            <br>- Deploy部署(正式區面對end user) : 由 仲哲| 雅琪 由 NAS 取 zip 檔案部署。核對其內容和 Release發布 應該相同
-            <br>- Release發布(確認這就是要準備發佈到正式區的): 經 仲哲| 雅琪 確認 Test測試 滿足單個或多個 Asana 的需求卡片 後, 由 禹軒|(新人) 負責掛放並生成 zip 檔案
-            <br>- Test測試(新增修改功能的檢查):  由 開發人員自主使用
-        </li>
-        <li>
-            Customer-Complaint-Copy-Files :8839 由於局網域的權限限制, 無法在目前的IIS部署, 需用命令啟動, 做成<b>run8839.bat</b>檔案放置於虛擬機桌面方便啟動
-            <pre><code>
-                    cd C:\IIS\Eterge-Project-Customer-Complaint-Copy-Files-Publish
-                    dotnet WebToCmd.dll --urls http://192.168.150.207:8839</code></pre>
-            後續如果 NAS 有改路徑, 代碼:Customer-Complaint-Copy-Files :8839 和所含的 核心EXE檔案
-            兩者都要跟著調整, 重新 Build, Publish and Release
-            <b>
-            <ul>
-                <li>a.所在vm是否有權限訪問NAS 如果沒有 手工登入</li>
-                <li>b.appsettings 和 bat指定IP,Port,dir要正確</li>
-                <li>c.暫不用IIS 直接用cmd執行</li>
-            </ul>
-            </b>
-        </li>
-        <li>
-            禹軒 Release發布檔案 以 zip 檔案放置在 仲哲(4/26)在 NAS 設定的目錄 \\192.168.150.252\Eterge共用資料夾\MES\Release發布
-            <ul>
-                <li>
-                    MES查詢192.168.150.206
-                </li>
-                <li>
-                    MTF192.168.150.208
-                </li>
-                <li>
-                    報價192.168.150.242
-                </li>
-                <li>
-                    客訴192.168.150.207
-                </li>
-            </ul>
-        </li>
-        <li>[E6]報價部署已於 04/25 11:30 由 禹軒 交付給 仲哲 管理。完成技術轉移。</li>
-        <li>Eterge-Project-MES-Snapshot-Console 是 [MES查詢]每小時自動快照 的代碼。</li>
-       
-        <li><b>代碼</b>前綴為 Eterge-Project-。</li>
-        
-        <li>
-            顏色應對人員負責區塊
-            <ul>
-                <li><span style="background-color:#F5F5F5">Item 1,6,7,8 Eterge MES查詢 客訴 報價 MTF for 鍾仲哲 3658 林雅琪 3662</span></li>
-                <li><span style="background-color:#ffffed">Item 2,3,4,5 Eterge MES查詢 客訴 報價 MTF for 王禹軒 3661 and Mark</span></li>
-                <li><span style="background-color:#d3d3d3">整個 <b>ERP</b>, <b>BPM</b>, and <b>JMO MES</b>, 表示 MIS 為主的責任區</span></li>
-            </ul>
-        </li>
-        <li>除初期設置外, 後續 WebApp 更新, 由 仲哲 和 雅琪 取得發佈檔案後負責各正式機。</li>
-        <li>如需註冊MTF用戶，以設置權限，在沒有額外可運用的域名或端口前需要人工掛放專用App</li>
-        <li>DevOps示意圖</li>
-
-        <img src="/img/2023-04-11-000.png" alt="/img/2023-04-11-000.png" width="500" style="vertical-align:bottom" />
-    </ol>
+   
 }
 @code {
     protected override async Task OnInitializedAsync()
