@@ -1,0 +1,68 @@
+@page "/"
+@using Microsoft.AspNetCore.Http
+@inject ILogger<Intro> Logger
+@inject IHttpContextAccessor httpContextAccessor
+<PageTitle>應用</PageTitle>
+@*<DevOpsProject.Pages.CompUi.ServerInfoCompUi />*@
+@*版本:@linkTimeLocal.ToString("yyyy.MM.dd.HHmm")*@
+@if (true)
+{
+    string x = "-->";
+    <img src="img/Bread.png" alt="img/Bread.png" width="200" style="vertical-align:bottom">
+    <br />
+    <span style="color:purple">我們已將頁面改到</span>
+
+    @x
+
+    <a class="btn btn-primary" href="http://192.168.150.250/dev">192.168.150.250/dev</a>
+   
+}
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        var remoteIpAddress = httpContextAccessor.HttpContext.Connection?.RemoteIpAddress;
+        var localIpAddress = httpContextAccessor.HttpContext.Connection?.LocalIpAddress;
+
+        var ipv4Address = "???";
+        var serverIP = "???";
+        if (remoteIpAddress != null)
+        {
+            if (remoteIpAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)
+            {
+                // Convert IPv6 to IPv4
+                remoteIpAddress = System.Net.Dns.GetHostEntry(remoteIpAddress).AddressList
+                    .FirstOrDefault(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork);
+            }
+            if (remoteIpAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            {
+                // IPv4 address
+                ipv4Address = remoteIpAddress.ToString();
+            }
+        }
+        if (localIpAddress != null)
+        {
+            if (localIpAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)
+            {
+                // Convert IPv6 to IPv4
+                localIpAddress = System.Net.Dns.GetHostEntry(remoteIpAddress).AddressList
+                    .FirstOrDefault(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork);
+            }
+            if (localIpAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            {
+                // IPv4 address
+                serverIP = localIpAddress.ToString();
+            }
+        }
+
+
+
+
+        string timeStamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
+        //Logger.LogInformation("User visited the intro page at {Timestamp}", timeStamp);
+
+        // Save the log entry to a file with the yyyyMMdd naming convention
+        string logEntry = $"{ipv4Address} visited {serverIP} at {timeStamp}";
+        string logFileName = $"devops_log_{DateTime.UtcNow:yyyyMMdd}.txt";
+        await File.AppendAllTextAsync(logFileName, logEntry + Environment.NewLine);
+    }
+}
