@@ -94,10 +94,23 @@
         list-style: none;
         margin: 0;
         padding: 0;
+        display: flex; /* Use flexbox to make the icons appear in a row */
+        justify-content: center; /* Center-align the icons horizontally */
+    }
+
+    .iconPromote li {
+        text-align: -webkit-match-parent;
+        margin: 0 10px; /* Add margin to separate the icons */
     }
 
     ul {
+        display: block;
         list-style-type: disc;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
     }
 
     body {
@@ -110,6 +123,21 @@
         font-size: .9375em;
         font-weight: normal;
     }
+
+    .iconPromote {
+        float: none;
+        width: auto;
+        padding: 10px 0;
+        margin: 15px 0;
+        clear: both;
+    }
+
+    .iconPromote {
+        
+        width: 800px;
+        float: left;
+    }
+
 </style>
 @code {
     protected override async Task OnInitializedAsync()
