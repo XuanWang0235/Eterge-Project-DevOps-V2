@@ -8,7 +8,7 @@
 @if (true)
 {
     <h1>應用</h1>
-    
+
     <section class="iconPromote">
         <ul>
             <li>
@@ -48,7 +48,7 @@
                 </a>
             </li>
         </ul>
-    
+
     </section>
 }
 <style>
@@ -68,6 +68,10 @@
         border: 2px solid #99a6ac;
         transition: .2s;
     }
+
+        .iconPromote li img:hover {
+            background-color: yellow; /* Change to the color you want on hover */
+        }
 
     img {
         border: none;
@@ -100,8 +104,10 @@
 
     .iconPromote li {
         text-align: -webkit-match-parent;
-        margin: 0 10px; /* Add margin to separate the icons */
+        margin: 0; /* Remove the margin that causes uneven spacing */
+        flex: 1; /* Distribute equal width among all li elements */
     }
+
 
     ul {
         display: block;
@@ -133,7 +139,6 @@
     }
 
     .iconPromote {
-        
         width: 800px;
         float: left;
     }
