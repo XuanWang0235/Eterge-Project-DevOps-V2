@@ -1,0 +1,126 @@
+@page "/before"
+@using Microsoft.AspNetCore.Http
+@inject ILogger<Intro> Logger
+@inject IHttpContextAccessor httpContextAccessor
+<PageTitle>應用</PageTitle>
+@*<DevOpsProject.Pages.CompUi.ServerInfoCompUi />*@
+@*版本:@linkTimeLocal.ToString("yyyy.MM.dd.HHmm")*@
+@if (true)
+{
+    <h1>應用</h1>
+    <table class="gridtable">
+        <tr>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+
+        </tr>
+        <tr>
+            <th>應用</th>
+            <th>MES查詢</th>
+            <th>組裝機IoT</th>
+            <th>客訴</th>
+        </tr>
+        <tr>
+            <td valign="top" class="color2">
+                <ul>
+
+                    <li><a class="btn btn-primary" target="_blank" href="http://192.168.150.250:8881">端口8881 上線版本</a></li>
+
+                </ul>
+            </td>
+            <td valign="top" class="color1">
+                <ul>
+
+                    <li>
+                        局網訪問 <a target="_blank" href="http://192.168.150.206:8813">MES查詢(快照版)</a>:8813
+                    </li>
+                    <li>
+                        局網訪問 <a target="_blank" href="http://192.168.150.206:8815">MES查詢(線上版)</a>:8815
+                    </li>
+                    <li>
+                        局網訪問 <a target="_blank" href="http://192.168.150.206:8566">MES月計畫維護</a>:8566
+                    </li>
+                    <li><a target="_blank" href="http://192.168.150.206:8815/etg-lot007/5203-23072701P00024/ext">單個lot範例</a></li>
+                </ul>
+            </td>
+            <td valign="top" class="color1">
+                <ul>
+
+                    <li><a target="_blank" href="http://192.168.150.209:8855/"><span style="color:darkblue">2023.5.25.1344</span></a></li>
+                </ul>
+            </td>
+            <td valign="top" class="color1">
+                <ul>
+                    <li>
+                        局網訪問 <a target="_blank" href="http://192.168.150.207:8835/">客訴</a>:8835
+                        <ul>
+                            <li>
+                                <a target="_blank" href="http://192.168.150.207:8833/">維護附件名稱</a>:8833
+                            </li>
+                            <li>
+                                <a target="_blank" href="http://192.168.150.207:8839/">複製NAS檔案</a>:8839
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </td>
+
+        </tr>
+        <tr>
+            <td colspan="6">備註:BPM <a target="_blank" href="http://192.168.150.235:8088">訪問</a></td>
+        </tr>
+    </table>
+    <br />
+
+}
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        var remoteIpAddress = httpContextAccessor.HttpContext.Connection?.RemoteIpAddress;
+        var localIpAddress = httpContextAccessor.HttpContext.Connection?.LocalIpAddress;
+
+        var ipv4Address = "???";
+        var serverIP = "???";
+        if (remoteIpAddress != null)
+        {
+            if (remoteIpAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)
+            {
+                // Convert IPv6 to IPv4
+                remoteIpAddress = System.Net.Dns.GetHostEntry(remoteIpAddress).AddressList
+                    .FirstOrDefault(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork);
+            }
+            if (remoteIpAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            {
+                // IPv4 address
+                ipv4Address = remoteIpAddress.ToString();
+            }
+        }
+        if (localIpAddress != null)
+        {
+            if (localIpAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetworkV6)
+            {
+                // Convert IPv6 to IPv4
+                localIpAddress = System.Net.Dns.GetHostEntry(remoteIpAddress).AddressList
+                    .FirstOrDefault(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork);
+            }
+            if (localIpAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            {
+                // IPv4 address
+                serverIP = localIpAddress.ToString();
+            }
+        }
+
+
+
+
+        string timeStamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff");
+        //Logger.LogInformation("User visited the intro page at {Timestamp}", timeStamp);
+
+        // Save the log entry to a file with the yyyyMMdd naming convention
+        string logEntry = $"{ipv4Address} visited {serverIP} at {timeStamp}";
+        string logFileName = $"devops_log_{DateTime.UtcNow:yyyyMMdd}.txt";
+        await File.AppendAllTextAsync(logFileName, logEntry + Environment.NewLine);
+    }
+}
